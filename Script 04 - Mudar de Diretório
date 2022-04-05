@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+echo "Para qual diretório você gostaria de ir? (path): "
+read nome_dir;
+echo "Alternando para diretório $nome_dir ..."
+cd $nome_dir
+echo ""
+pwd
+ls -l

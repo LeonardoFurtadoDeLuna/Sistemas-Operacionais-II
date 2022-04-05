@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+cat arq4 | wc -l > resp
+read linhas < resp
+echo $linhas
+
+if [ $linhas -gt 10 ]
+then 
+	rm arq4
+	echo "Apaguei arq4..."
+else
+	echo "Não apaguei arq4..."
+fi
+echo ""
+

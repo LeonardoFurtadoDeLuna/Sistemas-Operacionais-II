@@ -1,0 +1,19 @@
+#!/bin/bash
+clear
+echo "Digite um número qualquer: "
+read num;
+if [ "$num" -gt 100 ];
+then
+	echo "O número digitado é maior do que 100"
+else
+	echo "O número digitado não é maior do que 100"
+fi
+
+# operadores relacionais no bash shell script: 
+# -gt --> maior que 
+# -lt --> menor que
+# -ge --> maior ou igual
+# -le --> menor ou igual
+# -eq --> igual
+# -ne --> diferente
+# sintaxe do if: if [ "$variavel" (ou constante) <operador relacional> "$variavel" (ou constante) ]; (ver 5a linha deste script) 

@@ -1,0 +1,31 @@
+#!/bin/bash
+clear
+
+sudo mkdir /prova_de_leonardof
+cd /prova_de_leonardof/
+
+cd /
+chmod 744 prova_de_leonardo
+
+touch texto_teste_leonardo
+echo "Olá tudo bem!" >> texto_teste_leonardo
+chmod 644 texto_teste_leonardo
+
+cp -r/prova_de_leonardof/home/leonardo
+rm -d/prova_de_leonardof
+
+
+
+CORREÇÃO
+cd /
+sudo mkdir /prova_de_leonardo
+sudo chmod 777 prova_de_leonardo
+cd /prova_de_leonardof
+sudo cat > texto_teste_leonardo
+chmod 644 texto_teste_leonardo
+cp texto_teste_leonardo /home/leonardo
+cd .. ou cd /
+
+
+sudo rmdir prova_de_leonardo #não consegui pegar o finalzinho q tbm pode ser rm -r/alguma coisa
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+ls -l "Script 01 - Exibição e Variáveis"
+echo ""
+stat -c %a "Script 01 - Exibição e Variáveis"
+echo ""
+chmod 777 "Script 01 - Exibição e Variáveis"
+echo ""
+echo "Testando a mudança de permissões no próprio arquivo..."
+echo ""
+stat -c %a "Script 01 - Exibição e Variáveis"
+echo ""
+ls -l "Script 01 - Exibição e Variáveis"
+echo ""
+
+

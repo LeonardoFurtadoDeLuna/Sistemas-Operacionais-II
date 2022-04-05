@@ -1,0 +1,42 @@
+#!/bin/bash
+procura_arq()
+{
+	c=x
+	printf "Arquivo: "
+	read arq
+	printf "Diretório atual: "
+	dir=echo pwd
+	printf "Diretório destino: "
+	read dird
+	if [ -e "$dir$arq" ] && [ -e "$dird" ]
+	then
+		mv "$dir$arq" "$dird/$arq"
+		echo "Feito!"
+	elif [ ! -e "$dird" ] && [ -e "$dir$arq" ]
+	then
+		while [ "$c" != s ] && [ "$c" != n ]
+		do
+			printf "\nO diretório $dird não existe. Deseja criar? [s/n]: "
+			read c
+		done
+		if [ "$c" == s ]
+		then
+			mkdir "$dird" 2>/dev/null
+			if [ $? -eq 1 ]
+			then
+				printf "\nNão foi possível criar o diretório de destino...\n"
+			else	
+				mv "$dir$arq" "$dird/$arq"
+				echo "Feito!"
+			fi
+		else 
+			echo "Nenhuma ação realizada!"
+		fi
+	else
+		printf "O arquivo $arq não existe no diretório atual!"
+	fi
+}
+clear
+procura_arq
+echo ""
+

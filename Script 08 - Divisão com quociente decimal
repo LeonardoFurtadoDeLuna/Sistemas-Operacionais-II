@@ -1,0 +1,13 @@
+#!/bin/bash
+clear
+echo "Digite primeiro número: "
+read num1;
+echo "Digite segundo  número: "
+read num2;
+
+num3=$(echo "scale=2; $num1/$num2" | bc)
+
+echo "Resultado: $num3"
+
+# bc --> bash calculator
+

@@ -1,0 +1,38 @@
+#!/bin/bash
+procura_arq()
+{
+	local arq=$1
+	local dest=$2
+	if [ -e "$dest" ]
+	then
+		echo "Movendo $arq para $dest..."
+		mv "$arq" "$dest"
+	else
+		echo "Diretório $dest não existe!"
+	fi
+}
+clear
+printf "Extensão do arquivo: "
+read ext
+printf "Diretório destino: "
+read dird
+op=3
+while [ $op -ne 1 ] && [ $op -ne 2 ]
+do
+	printf "1 - Diretório atual ou 2 - Outro?: "
+	read op
+done
+if [ $op -eq 2 ]
+then
+	printf "Diretório origem: "
+	read diro
+	cd "$diro"
+else
+	printf "Diretório atual: "
+	pwd
+fi
+shopt -s nullglob
+for arquivo in *."$ext"
+do
+	procura_arq $arquivo $dird
+done

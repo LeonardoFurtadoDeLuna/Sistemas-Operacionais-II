@@ -1,0 +1,44 @@
+#!/bin/bash
+clear
+echo ""
+
+echo "Criando arquivo teste100 no diretório do usuário... "
+cd /home/leonardo/
+
+touch teste100
+echo "Olá tudo bem!" >> teste100
+echo ""
+
+echo "Você está no diretório: "
+pwd
+
+echo ""
+echo "Informe um novo nome para o arquivo teste100: "
+read nome
+
+mv teste100 $nome
+echo ""
+echo "Arquivos do diretório de usuário: "
+ls -l
+
+CORREÇÃO
+#!/bin/bash
+clear
+
+cd /home/leonardo/
+pwd
+echo "Digite um nome para o arquivo: "
+read nome
+mv teste100 $nome
+ls -l
+
+
+
+
+
+
+
+
+
+
+

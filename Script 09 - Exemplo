@@ -1,0 +1,12 @@
+# Shell script de exemplo
+#! /bin/bash
+clear
+echo "Teste de comandos..."
+echo ""
+cd /home/leonardo
+ls -l
+echo ""
+pwd
+echo ""
+echo "Fim..."
+echo ""

@@ -1,0 +1,24 @@
+#!/bin/bash
+read_file_content()
+{
+	conta=0
+	local file_name=$1
+	echo "$file_name"
+	sed 1d $1 | while IFS='\n' read line
+	do
+		echo $line | while IFS=';' read RA NOME CURSO FALTAS NOTA1 NOTA2
+		do
+			echo "$RA $NOME $CURSO $FALTAS $NOTA1 $NOTA2"
+		done
+	done
+}
+read_files()
+{
+	shopt -s nullglob
+	for arquivo in *.csv
+	do
+		read_file_content $arquivo
+	done
+}
+clear
+read_files

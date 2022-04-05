@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+printf "Arquivo: "
+read arq
+printf "Diretório atual: "
+dir=echo pwd
+echo ""
+if [ -e "$dir$arq" ]
+then
+	printf "O arquivo $arq existe no diretório "
+	pwd
+else
+	printf "O arquivo $arq não existe no diretório "
+	pwd
+fi
+echo ""

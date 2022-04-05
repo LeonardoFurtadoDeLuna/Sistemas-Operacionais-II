@@ -1,0 +1,33 @@
+#! /bin/bash
+# ver se um número é primo
+# usa o bc (bash calculator)
+clear
+printf "Número primo?"
+echo ""
+printf "Digite um número para saber se é primo = "
+read num
+
+raiz=$(echo "sqrt($num)" | bc)
+primo=1
+conta=2
+
+if [ $num -lt 2 ]
+then
+	echo "Número não é primo"
+else
+	while [ $conta -le $raiz ] && [ $primo -eq 1 ]
+	do
+		if [ $(("$num" % "$conta")) -eq 0 ]
+		then
+			primo=0
+		else
+			((conta = $conta + 1))
+		fi
+	done
+	if [ $primo -eq 1 ]
+	then
+		echo "$num é primo"
+	else
+		echo "$num não é primo" 
+	fi
+fi

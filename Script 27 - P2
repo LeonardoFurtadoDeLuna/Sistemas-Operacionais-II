@@ -1,0 +1,53 @@
+#!/bin/bash
+clear
+
+echo "Informe o nome do diretório: "
+read dir
+
+cd $dir
+
+    echo "\nMENU "
+    echo "1 - Listar todos os arquivos "
+    echo "2 - Apaga todos os arquivos "
+    echo "3 - Mostrar o nome do usuário "
+    echo "4 - Sair "
+
+opcao=0
+
+while [$opcao -eq 4]
+do
+
+    echo "Qual a opção do MENU que você deseja utilizar: "
+    read opcao
+
+    if [$opcao -eq 1]
+    then
+         echo "Listando os arquivos do diretório: "
+         ls -l
+    fi 
+
+    if [$opcao -eq 2]
+    then
+         echo "Apagando arquivos e subdiretórios. "
+         rm *
+    fi
+
+    if [$opcao -eq 3]
+    then
+         echo "O nome de usuário  "
+         whoami
+    fi
+
+done
+
+
+   
+   
+
+
+
+
+   
+
+
+

@@ -1,0 +1,43 @@
+#! /bin/bash
+clear
+
+#- Pedindo o nome do arquivo
+printf "INFORME O NOME DO ARQUIVO: "
+read nome;
+printf "\n---------------------------------------------------------------------------------\n"
+conta=0
+touch $nome
+
+#- Garantir que o arquivo não seja apagado
+chmod 1777 $nome;
+
+
+while [ $conta -ne 1 ]
+do
+
+    #- Gravar o arquivo uma linha de cada vez
+    echo ""
+    printf "PARA INSERIR UMA LINHA DIGITE 1, CASO NÃO QUEIRA INSERIR DIGITE QUALQUER NÚMERO: "
+    read op;
+
+        if [ "$op" -eq 1 ];
+        then
+	       printf "Escreva o conteúdo da linha: "
+               read conteudo;
+               echo $conteudo >> $nome
+               echo "Inserção de conteúdo finalizada!!!"
+               printf "\n---------------------------------------------------------------------------------\n"
+        else
+               #- Mostrar o conteúdo e o número de linhas
+               printf "\n---------------------------------------------------------------------------------\n"
+               echo "O CONTEÚDO DO ARQUIVO $nome É":
+               cat $nome
+               echo ""
+               echo "A quantidade de linhas do arquivo $nome é: "
+               wc -l $nome
+               ((conta=$conta+1))
+        fi
+
+done
+
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+clear
+echo "Nome do arquivo que vai guardar o texto: "
+read nome;
+rm "$nome" 2>/dev/null
+conta=0
+resp=s
+nao1=n
+nao2=N
+while [ "$resp" != "$nao1" ] && [ "$resp" != "$nao2" ]
+do
+	((conta = conta + 1))
+	echo "Linha $conta:"
+	read linha;
+	echo "$linha" > temp
+	cat temp >> $nome
+	echo "Mais? "
+	read resp;
+done  
+echo "Conteúdo do arquivo $nome:"
+cat $nome
+echo "Número de linhas do arquivo $nome: $conta" 
+echo ""
+echo "Done!"

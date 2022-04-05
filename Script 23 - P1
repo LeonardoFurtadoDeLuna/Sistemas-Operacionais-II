@@ -1,0 +1,38 @@
+#!/bin/bash
+clear
+a=0
+b=0
+c=0
+cont=0
+num=0
+
+ while [ $a -lt 1 ]
+do
+
+    echo "Digite um limite (inteiro positivo maior que 0): "
+    read a;
+
+done
+
+
+while [ $cont -lt $a ]
+do
+    echo "Digite um número inteiro: "
+    read num;
+     
+    if [ $num -eq 0 ]
+    then
+         ((b = $b + 1))
+    fi 
+
+    if [ $(("$num" % 4)) -eq 0 ]
+    then
+         ((c = $c + 1))
+    fi
+
+((cont = $cont + 1))
+
+done
+
+printf "\nA quantidade de números divísiveis por 3 é: $b"
+printf "\nA quantidade de números divísiveis por 2 e 4 é: $c"

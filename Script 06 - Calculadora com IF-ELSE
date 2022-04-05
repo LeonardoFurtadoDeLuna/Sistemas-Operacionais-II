@@ -1,0 +1,31 @@
+#!/bin/bash
+clear
+echo "Digite primeiro número: "
+read num1;
+echo "Digite segundo  número: "
+read num2;
+echo "Digite a operação (1 = soma, 2 = subtração, 3 = divisão, 4 = multiplicação)"
+read op;
+
+if [ "$op" -eq 3 ] && [ "$num2" -eq 0 ];
+then
+	echo "Impossível dividir por zero!"
+elif [ "$op" -eq 1 ];
+then
+	res=$(("$num1"+"$num2"))
+	echo "$num1 + $num2 = $res"
+elif [ "$op" -eq 2 ];
+then
+	res=$(("$num1"-"$num2"))
+	echo "$num1 - $num2 = $res"
+elif [ "$op" -eq 3 ];
+then
+	res=$(("$num1"/"$num2"))
+	echo "$num1 / $num2 = $res"
+elif [ "$op" -eq 4 ];
+then
+	res=$(("$num1"*"$num2"))
+	echo "$num1 * $num2 = $res"
+else
+	echo "Opção incorreta..."
+fi

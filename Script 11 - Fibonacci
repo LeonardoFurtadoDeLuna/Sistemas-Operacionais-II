@@ -1,0 +1,35 @@
+#! /bin/bash
+echo "Números de Fibonacci: 1,1,2,3,5,8,13,21,34,..."
+echo ""
+num1=1
+num2=1
+pos=0
+clear
+while [ $pos -lt 1 ]
+do
+	echo "Digite a posição até a qual quer imprimir os números = "
+	read pos
+done
+echo ""
+if [ $pos -eq 1 ]
+then
+	printf "1"
+	echo ""
+elif [ $pos -eq 2 ]
+then
+	printf "1 1"
+	echo ""
+else
+	printf "1 1"
+	conta=3
+	while [ $conta -le $pos ]
+	do
+		((num3 = $num1 + $num2))
+		printf " %d" $num3
+		num1=$num2
+		num2=$num3
+                ((conta = $conta + 1))
+	done
+	echo ""
+fi
+		

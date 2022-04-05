@@ -1,0 +1,21 @@
+#!/bin/bash
+procura_arq()
+{
+	printf "Arquivo: "
+	read arq
+	printf "Diretório atual: "
+	dir=echo pwd
+	printf "Path de busca: "
+	read dirb
+	echo ""
+	if [ -e "$dirb/$arq" ]
+	then
+		printf "O arquivo $arq existe no diretório $dirb"
+	else
+		printf "O arquivo $arq não existe no diretório $dirb"
+	fi
+}
+clear
+procura_arq
+echo ""
+

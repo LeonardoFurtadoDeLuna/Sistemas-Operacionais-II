@@ -1,0 +1,16 @@
+#!/bin/bash
+clear
+entradas=$(ls -l)
+informa=$(df -h)
+echo "$entradas"
+echo ""
+echo "$informa"
+echo ""
+cd /home/leonardo
+chmod 755 /home/leonardo/Imagens
+cat Imagens
+echo ""
+ls -l Imagens
+
+# entradas=$(ls -l) --> guarda o comando ls -l na variável entradas
+# echo "$entradas" --> executa o comando guardado na variável no contexto do script

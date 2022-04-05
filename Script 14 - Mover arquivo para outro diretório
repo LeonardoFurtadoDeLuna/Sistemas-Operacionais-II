@@ -1,0 +1,21 @@
+#!/bin/bash
+procura_arq()
+{
+	printf "Arquivo: "
+	read arq
+	printf "Diretório atual: "
+	dir=echo pwd
+	printf "Diretório destino: "
+	read dird
+	if [ -e "$dir$arq" ] && [ -e "$dird" ]
+	then
+		mv "$dir$arq" "$dird/$arq"
+		echo "Feito!"
+	else
+		printf "O arquivo $arq não existe no diretório atual ou o diretório $dird não existe!"
+	fi
+}
+clear
+procura_arq
+echo ""
+
